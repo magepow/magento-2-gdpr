@@ -1,0 +1,10 @@
+<?php $helper = $this->helper('Magepow\Gdpr\Helper\Data') ?>
+<?php $active = $helper->getConfig('gdpr/login/active') ?>
+<?php if(!$active)
+return;
+?>
+<?php $label = $helper->getConfig('gdpr/login/label') ?>
+<div class="field choice magepow-gdpr-checkbox">
+	<input name="login[accept_gdpr]" value="1" id="accept_gdpr" class="checkbox" type="checkbox" data-validate="{required:true}"/>
+	<label for="accept_gdpr" class="label"><span><?php echo $label ?></span></label>
+</div>

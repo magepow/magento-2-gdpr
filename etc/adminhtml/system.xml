@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <tab id="magepow" translate="label" sortOrder="86">
+            <label>Magepow</label>
+        </tab>
+        <section id="gdpr" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60">
+            <class>separator-top</class>
+            <label>Gdpr</label>
+            <tab>magepow</tab>
+            <resource>Magepow_Gdpr::config</resource>
+			
+			<group id="cookie_restriction" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                <label>Cookie Restriction Mode</label>
+                <field id="title" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Title</label>
+                </field>
+				
+				<field id="content" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                    <label>Content</label>
+                </field>
+				
+				<field id="identifier" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="25">
+                    <label><![CDATA[Privacy Policy link <span style="color:#666; font-weight:normal">(CMS Page Identifier)</span>]]></label>
+                </field>
+				
+				<field id="button_text" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
+                    <label>Button text</label>
+					<validate>required-entry</validate>
+                </field>
+				
+				<field id="button_class" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="35">
+                    <label>Button class</label>
+                </field>
+				
+				<field id="more_view" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40">
+                    <label>More view</label>
+                    <source_model>Magepow\Gdpr\Model\Config\Source\More</source_model>
+                </field>
+				
+				<field id="more_text" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="50">
+                    <label>More view text</label>
+                </field>
+				
+				<field id="width" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60">
+                    <label>Width</label>
+                    <source_model>Magepow\Gdpr\Model\Config\Source\Width</source_model>
+                </field>
+				
+				<field id="width_custom" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="70">
+                    <label>Custom width</label>
+					<depends>
+                        <field id="width"><![CDATA[custom]]></field>
+                    </depends>
+					<validate>validate-number</validate>
+                </field>
+				
+				<field id="position" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="75">
+                    <label>Position</label>
+					<depends>
+                        <field id="width"><![CDATA[custom]]></field>
+                    </depends>
+                    <source_model>Magepow\Gdpr\Model\Config\Source\Position</source_model>
+                </field>
+
+				
+				<field id="margin_left" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="76">
+                    <label>Margin left</label>
+					<depends>
+                        <field id="width"><![CDATA[custom]]></field>
+						 <field id="position"><![CDATA[left]]></field>
+                    </depends>
+					<validate>validate-number</validate>
+                </field>
+
+                <field id="margin_right" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="77">
+                    <label>Margin right</label>
+                    <depends>
+                        <field id="width"><![CDATA[custom]]></field>
+                        <field id="position"><![CDATA[right]]></field>
+                    </depends>
+                    <validate>validate-number</validate>
+                </field>
+				
+				
+				<field id="margin_bottom" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="80">
+                    <label>Margin bottom</label>
+					<validate>validate-number</validate>
+                </field>
+				
+				
+				<field id="font_size" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="101">
+					<label>Font size</label>
+					<validate>validate-number</validate>
+				</field>
+				
+				<field id="text_align" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="102">
+                    <label>Text align</label>
+                    <source_model>Magepow\Gdpr\Model\Config\Source\Align</source_model>
+                </field>
+				
+				
+				<field id="box_shadow" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="120">
+                    <label>Box shadow</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+			
+			<group id="login" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                <label>Login Form</label>
+                <field id="active" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Show checkbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				
+				<field id="label" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                    <label>Checkbox label</label>
+					<depends>
+                        <field id="active">1</field>
+                    </depends>
+					<validate>required-entry</validate>
+                </field>
+            </group>
+			
+			<group id="register" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
+                <label>Register Form</label>
+                <field id="active" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Show checkbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				
+				<field id="label" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+                    <label>Checkbox label</label>
+					<depends>
+                        <field id="active">1</field>
+                    </depends>
+					<validate>required-entry</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

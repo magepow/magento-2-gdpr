@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <gdpr>
+			<cookie_restriction>
+				<title><![CDATA[COOKIES]]></title>
+				<content><![CDATA[We use cookies to make your experience better.<br/> To comply with the new e-Privacy directive, we need to ask for your consent to set the cookies.]]></content>
+				<identifier><![CDATA[privacy-policy-cookie-restriction-mode]]></identifier>
+				<button_text><![CDATA[Allow Cookies]]></button_text>
+				<more_view><![CDATA[popup]]></more_view>
+				<more_text><![CDATA[Read more]]></more_text>
+				<width><![CDATA[custom]]></width>
+				<width_custom>400</width_custom>
+				<position><![CDATA[left]]></position>
+				<margin_left>30</margin_left>
+				<margin_right>30</margin_right>
+				<margin_bottom>50</margin_bottom>
+				<box_shadow>1</box_shadow>
+				<text_align><![CDATA[center]]></text_align>
+				<font_size>15</font_size>
+			</cookie_restriction>
+			<login>
+				<active>1</active>
+				<label><![CDATA[By using this form you agree with the storage and handling of your data by this website.]]></label>
+			</login>
+			<register>
+				<active>1</active>
+				<label><![CDATA[By using this form you agree with the storage and handling of your data by this website.]]></label>
+			</register>
+		</gdpr>
+    </default>
+</config>
