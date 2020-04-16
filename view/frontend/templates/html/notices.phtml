@@ -77,8 +77,9 @@
 
 					require([
 						'jquery',
+						'jquery/jquery.cookie',
 						'Magento_Ui/js/modal/modal'
-					], function($, modal){
+					], function($, cookie, modal){
 						$("#privacyLink").click(function(event) {
 						  event.preventDefault();
 						  	if ($('#magepow-gdpr-popup').length) {
@@ -98,6 +99,13 @@
 								});
 							}
 						});
+
+						if ($.cookie('user_allowed_save_cookie') === null || $.cookie('user_allowed_save_cookie') === "" || $.cookie('user_allowed_save_cookie') === "null" || $.cookie('user_allowed_save_cookie') === undefined){
+							$('body').addClass('cookie-message')
+						}
+						$('#btn-cookie-allow').click(function(){
+							$('body').removeClass('cookie-message')
+						})
 				   });
 			</script>
 		<?php endif ?>
