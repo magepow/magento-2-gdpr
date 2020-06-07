@@ -12,42 +12,42 @@
 			
 			<group id="cookie_restriction" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
                 <label>Cookie Restriction Mode</label>
-                <field id="title" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                <field id="title" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" canRestore="1">
                     <label>Title</label>
                 </field>
 				
-				<field id="content" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+				<field id="content" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20" canRestore="1">
                     <label>Content</label>
                 </field>
 				
-				<field id="identifier" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="25">
+				<field id="identifier" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="25" canRestore="1">
                     <label><![CDATA[Privacy Policy link <span style="color:#666; font-weight:normal">(CMS Page Identifier)</span>]]></label>
                 </field>
 				
-				<field id="button_text" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
+				<field id="button_text" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30" canRestore="1">
                     <label>Button text</label>
 					<validate>required-entry</validate>
                 </field>
 				
-				<field id="button_class" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="35">
+				<field id="button_class" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="35" canRestore="1">
                     <label>Button class</label>
                 </field>
 				
-				<field id="more_view" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40">
+				<field id="more_view" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40" canRestore="1">
                     <label>More view</label>
                     <source_model>Magepow\Gdpr\Model\Config\Source\More</source_model>
                 </field>
 				
-				<field id="more_text" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="50">
+				<field id="more_text" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="50" canRestore="1">
                     <label>More view text</label>
                 </field>
 				
-				<field id="width" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60">
+				<field id="width" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60" canRestore="1">
                     <label>Width</label>
                     <source_model>Magepow\Gdpr\Model\Config\Source\Width</source_model>
                 </field>
 				
-				<field id="width_custom" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="70">
+				<field id="width_custom" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="70" canRestore="1">
                     <label>Custom width</label>
 					<depends>
                         <field id="width"><![CDATA[custom]]></field>
@@ -55,7 +55,7 @@
 					<validate>validate-number</validate>
                 </field>
 				
-				<field id="position" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="75">
+				<field id="position" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="75" canRestore="1">
                     <label>Position</label>
 					<depends>
                         <field id="width"><![CDATA[custom]]></field>
@@ -64,7 +64,7 @@
                 </field>
 
 				
-				<field id="margin_left" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="76">
+				<field id="margin_left" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="76" canRestore="1">
                     <label>Margin left</label>
 					<depends>
                         <field id="width"><![CDATA[custom]]></field>
@@ -73,7 +73,7 @@
 					<validate>validate-number</validate>
                 </field>
 
-                <field id="margin_right" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="77">
+                <field id="margin_right" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="77" canRestore="1">
                     <label>Margin right</label>
                     <depends>
                         <field id="width"><![CDATA[custom]]></field>
@@ -83,24 +83,24 @@
                 </field>
 				
 				
-				<field id="margin_bottom" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="80">
+				<field id="margin_bottom" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="80" canRestore="1">
                     <label>Margin bottom</label>
 					<validate>validate-number</validate>
                 </field>
 				
 				
-				<field id="font_size" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="101">
+				<field id="font_size" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="101" canRestore="1">
 					<label>Font size</label>
 					<validate>validate-number</validate>
 				</field>
 				
-				<field id="text_align" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="102">
+				<field id="text_align" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="102" canRestore="1">
                     <label>Text align</label>
                     <source_model>Magepow\Gdpr\Model\Config\Source\Align</source_model>
                 </field>
 				
 				
-				<field id="box_shadow" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="120">
+				<field id="box_shadow" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="120" canRestore="1">
                     <label>Box shadow</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
@@ -108,12 +108,12 @@
 			
 			<group id="login" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
                 <label>Login Form</label>
-                <field id="active" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                <field id="active" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" canRestore="1">
                     <label>Show checkbox</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
 				
-				<field id="label" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+				<field id="label" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20" canRestore="1">
                     <label>Checkbox label</label>
 					<depends>
                         <field id="active">1</field>
@@ -124,12 +124,12 @@
 			
 			<group id="register" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
                 <label>Register Form</label>
-                <field id="active" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                <field id="active" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" canRestore="1">
                     <label>Show checkbox</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
 				
-				<field id="label" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
+				<field id="label" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20" canRestore="1">
                     <label>Checkbox label</label>
 					<depends>
                         <field id="active">1</field>
