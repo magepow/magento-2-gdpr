@@ -72,11 +72,13 @@ class Data extends AbstractHelper
         return $value;
     }
 	
-	public function getUrlBuilder($identifier){
+	public function getUrlBuilder($identifier)
+    {
 		return $this->_url->getUrl($identifier);
 	}
 	
-	public function getPageContent($identifier){
+	public function getPageContent($identifier)
+    {
 		$page = $this->_pageFactory->create()->load($identifier);
 		return $this->_filterProvider->getPageFilter()->filter($page->getContent());
 	}
