@@ -81,7 +81,7 @@ class CheckUserCreateObserver implements ObserverInterface
 		$controller = $observer->getControllerAction();
 		$data = $controller->getRequest()->getPost();
 		
-        if ($this->_helper->getConfig('gdpr/register/active') 
+        if ($this->_helper->getConfigModule('register/active') 
 		&& !isset($data['accept_gdpr'])) {
 
 			$this->messageManager->addError(__('You do not agree with the storage and handling of your data by this website.'));

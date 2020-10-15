@@ -9,23 +9,23 @@
  * @LastEditTime: 2019-06-18 08:48:06
  */
 ?>
-<?php $helper = $this->helper('Magepow\Gdpr\Helper\Data') ?>
-<?php $configPopup = $helper->getConfig('gdpr/cookie_restriction'); ?>
-<?php $title = $configPopup['title']; ?>
-<?php $content = $configPopup['content']; ?>
+<?php $helper 		= $this->helper('Magepow\Gdpr\Helper\Data') ?>
+<?php $configPopup 	= $helper->getConfigModule('cookie_restriction'); ?>
+<?php $title 		= $configPopup['title']; ?>
+<?php $content 		= $configPopup['content']; ?>
 <?php $showMoreView = $configPopup['more_view']; ?>
 <?php $moreViewText = $configPopup['more_text']; ?>
-<?php $buttonText = $configPopup['button_text']; ?>
-<?php $boxShadow = $configPopup['box_shadow']; ?>
-<?php $width = $configPopup['width']; ?>
-<?php $widthCustom = $configPopup['width_custom']; ?>
-<?php $position = $configPopup['position']; ?>
-<?php $marginLeft = $configPopup['margin_left']; ?>
-<?php $marginRight = $configPopup['margin_right']; ?>
+<?php $buttonText 	= $configPopup['button_text']; ?>
+<?php $boxShadow 	= $configPopup['box_shadow']; ?>
+<?php $width 		= $configPopup['width']; ?>
+<?php $widthCustom 	= $configPopup['width_custom']; ?>
+<?php $position 	= $configPopup['position']; ?>
+<?php $marginLeft 	= $configPopup['margin_left']; ?>
+<?php $marginRight 	= $configPopup['margin_right']; ?>
 <?php $marginBottom = $configPopup['margin_bottom']; ?>
-<?php $fontSize = $configPopup['font_size']; ?>
-<?php $textAlign = $configPopup['text_align']; ?>
-<?php $identifier = $configPopup['identifier']; ?>
+<?php $fontSize 	= $configPopup['font_size']; ?>
+<?php $textAlign 	= $configPopup['text_align']; ?>
+<?php $identifier 	= $configPopup['identifier']; ?>
     <div role="alertdialog"
          tabindex="-1"
          class="magepow-gdpr-cookie-notice message global cookie text-align-<?php echo $textAlign ?><?php if($boxShadow): ?> gdpr-box-shadow<?php endif ?>"

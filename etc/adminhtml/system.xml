@@ -4,12 +4,18 @@
         <tab id="magepow" translate="label" sortOrder="86">
             <label>Magepow</label>
         </tab>
-        <section id="gdpr" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60">
+        <section id="magepow_gdpr" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60">
             <class>separator-top</class>
-            <label>Gdpr</label>
+            <label>GDPR</label>
             <tab>magepow</tab>
             <resource>Magepow_Gdpr::config</resource>
-			
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>			
 			<group id="cookie_restriction" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20">
                 <label>Cookie Restriction Mode</label>
                 <field id="title" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" canRestore="1">

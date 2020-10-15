@@ -17,6 +17,12 @@ use Magento\Framework\App\Helper\AbstractHelper;
 
 class Data extends AbstractHelper
 {
+
+    /**
+     * @var array
+     */
+    protected $configModule;
+
     protected $storeManager;
 	
 	protected $_url;
@@ -24,8 +30,6 @@ class Data extends AbstractHelper
 	protected $_pageFactory;
 	
 	protected $_filterProvider;
-
-	const XML_PATH_RSGITECH_NEWS = 'gdpr/';
 	
     public function __construct(
         Context $context,
@@ -40,19 +44,32 @@ class Data extends AbstractHelper
 		$this->_pageFactory = $pageFactory;
 		$this->_filterProvider = $filterProvider;
         parent::__construct($context);
+        $this->configModule = $this->getConfig(strtolower($this->_getModuleName()));
     }
 
-    public function getConfig($path, $store = null)
+    public function getConfig($cfg='')
     {
-        if ($store == null || $store == '') {
-            $store = $this->storeManager->getStore()->getId();
+        if($cfg) return $this->scopeConfig->getValue( $cfg, \Magento\Store\Model\ScopeInterface::SCOPE_STORE );
+        return $this->scopeConfig;
+    }
+
+    public function getConfigModule($cfg='', $value=null)
+    {
+        $values = $this->configModule;
+        if( !$cfg ) return $values;
+        $config  = explode('/', $cfg);
+        $end     = count($config) - 1;
+        foreach ($config as $key => $vl) {
+            if( isset($values[$vl]) ){
+                if( $key == $end ) {
+                    $value = $values[$vl];
+                }else {
+                    $values = $values[$vl];
+                }
+            } 
+
         }
-        $store = $this->storeManager->getStore($store);
-        $config = $this->scopeConfig->getValue(
-            $path,
-            ScopeInterface::SCOPE_STORE,
-            $store);
-        return $config;
+        return $value;
     }
 	
 	public function getUrlBuilder($identifier){

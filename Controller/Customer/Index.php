@@ -27,7 +27,7 @@ class Index extends CustomerController
         if ($navigationBlock = $resultPage->getLayout()->getBlock('customer_account_navigation')) {
             $navigationBlock->setActive('gdpr/customer');
         }
-        $resultPage->getConfig()->getTitle()->set(__('Gdpr'));
+        $resultPage->getConfig()->getTitle()->set(__('GDPR'));
         return $resultPage;
     }
 }

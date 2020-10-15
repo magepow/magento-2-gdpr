@@ -77,7 +77,7 @@ class CheckUserLoginObserver implements ObserverInterface
         $controller = $observer->getControllerAction();
         $loginParams = $controller->getRequest()->getPost('login');
 
-		if ($this->_helper->getConfig('gdpr/login/active') 
+		if ($this->_helper->getConfigModule('login/active') 
 			&& !isset($loginParams['accept_gdpr'])) {
 			
 			$this->messageManager->addError(__('You do not agree with the storage and handling of your data by this website.'));
