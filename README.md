@@ -20,6 +20,12 @@ Enable/disable and customize the content of the cookies window and checkboxes
 Easy to configure admin panel, customer-friendly interface
 Allows activation/deactivation of extensions depending on country location
 ### How to install Magento 2 GDPR Free
+
+```
+composer require magepow/gdpr
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f
+```
 #### How to use Magento 2 GDPR Free
 ### Donation
 
