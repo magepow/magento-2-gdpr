@@ -70,39 +70,50 @@
 </script>
 <?php if($showMoreView=='popup' && $moreViewText!=''): ?>
 	<div style="display:none" id="magepow-gdpr-popup-container">
-		<div class="magepow-gdpr-popup" id="magepow-gdpr-popup">
-			<?php echo $helper->getPageContent($identifier) ?>
-		</div>
+		<div class="magepow-gdpr-popup" id="magepow-gdpr-popup" data-url="<?php /* @escapeNotVerified */ echo $this->getUrl('gdpr', array('_secure'=>$this->getRequest()->isSecure()))?>" >></div>
 	</div>
 	<?php if($showMoreView=='popup'): ?>
 		<script type="text/javascript">
-			var popupContent = document.getElementById('magepow-gdpr-popup-container').innerHTML;
-
 				require([
 					'jquery',
 					'jquery/jquery.cookie',
 					'Magento_Ui/js/modal/modal'
 				], function($, cookie, modal){
+					var gdprPopupContainer = $('#magepow-gdpr-popup-container');
+					var popupContent = gdprPopupContainer.html();
+					var _gdprModal = gdprPopupContainer.find('#magepow-gdpr-popup');
 					$("#privacyLink").click(function(event) {
-					  event.preventDefault();
-					  	if ($('#magepow-gdpr-popup').length) {
-							var options = {
-								type: 'popup',
-								modalClass: 'modal-magepow-gdpr',
-								responsive: true,
-								innerScroll: true,
-								title: '',
-								buttons: []
-							};
-							var gdprPopup = modal(options, $('#magepow-gdpr-popup'));
-							$('#magepow-gdpr-popup').trigger('openModal');
-							
-							$('.modal-magepow-gdpr .action-close').click(function(){
-								setTimeout(function(){ $('.modals-wrapper .modal-magepow-gdpr').remove(); $('#magepow-gdpr-popup-container').html(popupContent) }, 500);
-							});
-						}
-					});
+					  	event.preventDefault();
+					  	if(_gdprModal.length) {
+					  		var url = _gdprModal.data('url');
+			                $.ajax({
+			                    url:url,
+			                    type:'POST',
+			                    showLoader: true,
+			                    cache:false,   
+			                    success:function(data){
+			                    	_gdprModal.html(data);
+						            modal({
+						                type: 'popup',
+						                modalClass: 'modals-gdpr-popup',
+						                responsive: true, 
+										innerScroll: true,
+										buttons: false,
+						                closed: function(){
+						                	$('.modals-gdpr-popup').remove();
+						                	gdprPopupContainer.html(popupContent);
+						                }                       	
+									}, _gdprModal);
+									var body = $('body');
+									_gdprModal.modal('openModal');
+									body.addClass('open-gdpr-popup');
+									_gdprModal.trigger('contentUpdated');
+									_gdprModal.on('modalclosed', function(){body.removeClass('open-gdpr-popup');});
+			                    }
+			                });
 
+			            }
+					});
 					if ($.cookie('user_allowed_save_cookie') === null || $.cookie('user_allowed_save_cookie') === "" || $.cookie('user_allowed_save_cookie') === "null" || $.cookie('user_allowed_save_cookie') === undefined){
 						$('body').addClass('cookie-message')
 					}
