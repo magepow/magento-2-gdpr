@@ -6,7 +6,7 @@
 				<enabled>1</enabled>
 			</general>
 			<cookie_restriction>
-				<title><![CDATA[COOKIES]]></title>
+				<title><![CDATA[]]></title>
 				<content><![CDATA[We use cookies to make your experience better.]]></content>
 				<identifier><![CDATA[privacy-policy-cookie-restriction-mode]]></identifier>
 				<button_text><![CDATA[Allow Cookies]]></button_text>
