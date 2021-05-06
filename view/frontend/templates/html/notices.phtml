@@ -34,6 +34,9 @@
      class="magepow-gdpr-cookie-notice message global cookie text-align-<?php echo $textAlign ?><?php if($boxShadow): ?> gdpr-box-shadow<?php endif ?>"
      id="notice-cookie-block"
      style="display: none;<?php if($width == 'custom' && $widthCustom!=''): ?>width:<?php echo $widthCustom ?>px;<?php endif ?><?php if($marginBottom!=''): ?>bottom:<?php echo $marginBottom ?>px;<?php endif ?><?php if($width == 'custom' && $position=='left' && $marginLeft!=''): ?>left:<?php echo $marginLeft ?>px; right:unset;<?php endif ?><?php if($width == 'custom' && $position=='right' && $marginLeft!=''): ?>right:<?php echo $marginRight ?>px; left:unset;<?php endif ?><?php if($fontSize!=''): ?>font-size:<?php echo $fontSize ?>px;<?php endif ?>">
+    <span class="action-close cookie-close">
+     	<span class="hidden">Close</span>
+    </span>
     <div role="document" class="content" tabindex="0">
         <div class="info">
             <?php if($title!=''): ?>
@@ -120,6 +123,10 @@
 					$('#btn-cookie-allow').click(function(){
 						$('body').removeClass('cookie-message')
 					})
+		            $('.cookie-close').on('click', function(event) {
+		                event.preventDefault();
+		                $('.magepow-gdpr-cookie-notice').addClass('disable');
+		            });
 			   });
 		</script>
 	<?php endif ?>
