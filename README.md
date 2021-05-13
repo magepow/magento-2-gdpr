@@ -19,6 +19,11 @@ The consent check box appears when a customer makes an account login or creates 
 Enable/disable and customize the content of the cookies window and checkboxes
 Easy to configure admin panel, customer-friendly interface
 Allows activation/deactivation of extensions depending on country location
+
+[![Latest Stable Version](https://poser.pugx.org/magepow/gdpr/v/stable)](https://packagist.org/packages/magepow/gdpr)
+[![Total Downloads](https://poser.pugx.org/magepow/gdpr/downloads)](https://packagist.org/packages/magepow/gdpr)
+[![Daily Downloads](https://poser.pugx.org/magepow/gdpr/d/daily)](https://packagist.org/packages/magepow/gdpr)
+
 ### How to install Magento 2 GDPR Free
 #### ✓ Install Magepow GDPR Free via composer (recommend)
 Run the following command in Magento 2 root folder:
