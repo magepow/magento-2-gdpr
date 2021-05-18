@@ -20,6 +20,16 @@ Enable/disable and customize the content of the cookies window and checkboxes
 Easy to configure admin panel, customer-friendly interface
 Allows activation/deactivation of extensions depending on country location
 
+## How does GDPR extension work?
+
+- Detail Description: [Magento 2 GDPR](https://magepow.com/magento-2-gdpr.html)
+
+- [Doccumentation](https://docs.magepow.com/gdpr)
+
+- [DEMO FRONTEND](http://demo.magepow.com/gdpr/)
+
+- [DEMO BACKEND](http://demo.magepow.com/gdpr/admin)
+
 [![Latest Stable Version](https://poser.pugx.org/magepow/gdpr/v/stable)](https://packagist.org/packages/magepow/gdpr)
 [![Total Downloads](https://poser.pugx.org/magepow/gdpr/downloads)](https://packagist.org/packages/magepow/gdpr)
 [![Daily Downloads](https://poser.pugx.org/magepow/gdpr/d/daily)](https://packagist.org/packages/magepow/gdpr)
