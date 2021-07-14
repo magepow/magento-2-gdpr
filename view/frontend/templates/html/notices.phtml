@@ -29,8 +29,10 @@
 <?php $fontSize 	= $configPopup['font_size']; ?>
 <?php $textAlign 	= $configPopup['text_align']; ?>
 <?php $identifier 	= $configPopup['identifier']; ?>
+<?php $hiddenBottom = $configPopup['hidden_bottom']; ?>
 <div role="alertdialog"
      tabindex="-1"
+     data-hidden-bottom="<?php echo $hiddenBottom ?>"
      class="magepow-gdpr-cookie-notice message global cookie text-align-<?php echo $textAlign ?><?php if($boxShadow): ?> gdpr-box-shadow<?php endif ?>"
      id="notice-cookie-block"
      style="display: none;<?php if($width == 'custom' && $widthCustom!=''): ?>width:<?php echo $widthCustom ?>px;<?php endif ?><?php if($marginBottom!=''): ?>bottom:<?php echo $marginBottom ?>px;<?php endif ?><?php if($width == 'custom' && $position=='left' && $marginLeft!=''): ?>left:<?php echo $marginLeft ?>px; right:unset;<?php endif ?><?php if($width == 'custom' && $position=='right' && $marginLeft!=''): ?>right:<?php echo $marginRight ?>px; left:unset;<?php endif ?><?php if($fontSize!=''): ?>font-size:<?php echo $fontSize ?>px;<?php endif ?>">
@@ -58,6 +60,18 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+require(['jquery'], function($){
+    $(window).scroll(function() {
+        var $body = $('body');
+        var $noticeCookie = $('#notice-cookie-block');
+        var y = $(this).scrollTop();
+        var isHidden = $noticeCookie.data('hidden-bottom') ? (y + $(this).height() == $(document).height()) : '';
+        if (isHidden) $body.addClass('cookie-hidden-bottom');
+        else $body.removeClass('cookie-hidden-bottom');
+    });
+});
+</script>
 <script type="text/x-magento-init">
     {
         "#notice-cookie-block": {

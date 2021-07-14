@@ -18,6 +18,7 @@
 				<margin_left>30</margin_left>
 				<margin_right>30</margin_right>
 				<margin_bottom>0</margin_bottom>
+				<hidden_bottom>1</hidden_bottom>
 				<box_shadow>1</box_shadow>
 				<text_align><![CDATA[center]]></text_align>
 				<font_size>15</font_size>

@@ -68,7 +68,6 @@
                     </depends>
                     <source_model>Magepow\Gdpr\Model\Config\Source\Position</source_model>
                 </field>
-
 				
 				<field id="margin_left" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="76" canRestore="1">
                     <label>Margin left</label>
@@ -88,12 +87,16 @@
                     <validate>validate-number</validate>
                 </field>
 				
-				
 				<field id="margin_bottom" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="80" canRestore="1">
                     <label>Margin bottom</label>
 					<validate>validate-number</validate>
                 </field>
-				
+
+                <field id="hidden_bottom" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[Hidden Bottom End]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Hidden Notify Cookies when scroll to bottom end]]></comment>
+                </field>				
 				
 				<field id="font_size" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="101" canRestore="1">
 					<label>Font size</label>
@@ -104,7 +107,6 @@
                     <label>Text align</label>
                     <source_model>Magepow\Gdpr\Model\Config\Source\Align</source_model>
                 </field>
-				
 				
 				<field id="box_shadow" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="120" canRestore="1">
                     <label>Box shadow</label>
