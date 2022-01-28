@@ -74,6 +74,7 @@ class CheckUserLoginObserver implements ObserverInterface
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
+	if($this->_helper->getConfigModule('general/enabled')){
         $controller = $observer->getControllerAction();
         $loginParams = $controller->getRequest()->getPost('login');
 
@@ -86,7 +87,7 @@ class CheckUserLoginObserver implements ObserverInterface
 			$url = $beforeUrl ? $beforeUrl : $this->_customerUrl->getLoginUrl();
 			$controller->getResponse()->setRedirect($url);
 		}
-
+	}
         return;
     }
 }
