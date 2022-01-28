@@ -78,6 +78,7 @@ class CheckUserCreateObserver implements ObserverInterface
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
+	if($this->_helper->getConfigModule('general/enabled')){
 		$controller = $observer->getControllerAction();
 		$data = $controller->getRequest()->getPost();
 		
@@ -91,7 +92,7 @@ class CheckUserCreateObserver implements ObserverInterface
 			$controller->getResponse()->setRedirect($this->redirect->error($url));
 
         }
-
+	}
         return;
     }
 }
