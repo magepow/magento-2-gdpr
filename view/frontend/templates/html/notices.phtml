@@ -13,23 +13,23 @@
     $helper 		= $this->helper('Magepow\Gdpr\Helper\Data');
     if( !$helper->getConfigModule('general/enabled') ) return;
 ?>
-<?php $configPopup 	= $helper->getConfigModule('cookie_restriction'); ?>
-<?php $title 		= $configPopup['title']; ?>
-<?php $content 		= $configPopup['content']; ?>
-<?php $showMoreView = $configPopup['more_view']; ?>
-<?php $moreViewText = $configPopup['more_text']; ?>
-<?php $buttonText 	= $configPopup['button_text']; ?>
-<?php $boxShadow 	= $configPopup['box_shadow']; ?>
-<?php $width 		= $configPopup['width']; ?>
-<?php $widthCustom 	= $configPopup['width_custom']; ?>
-<?php $position 	= $configPopup['position']; ?>
-<?php $marginLeft 	= $configPopup['margin_left']; ?>
-<?php $marginRight 	= $configPopup['margin_right']; ?>
-<?php $marginBottom = $configPopup['margin_bottom']; ?>
-<?php $fontSize 	= $configPopup['font_size']; ?>
-<?php $textAlign 	= $configPopup['text_align']; ?>
-<?php $identifier 	= $configPopup['identifier']; ?>
-<?php $hiddenBottom = $configPopup['hidden_bottom']; ?>
+<?php $title        = $helper->getConfigModule('cookie_restriction/title'); ?>
+<?php $content      = $helper->getConfigModule('cookie_restriction/content'); ?>
+<?php $showMoreView = $helper->getConfigModule('cookie_restriction/more_view'); ?>
+<?php $moreViewText = $helper->getConfigModule('cookie_restriction/more_text'); ?>
+<?php $buttonText   = $helper->getConfigModule('cookie_restriction/button_text'); ?>
+<?php $boxShadow    = $helper->getConfigModule('cookie_restriction/box_shadow'); ?>
+<?php $width        = $helper->getConfigModule('cookie_restriction/width'); ?>
+<?php $widthCustom  = $helper->getConfigModule('cookie_restriction/width_custom'); ?>
+<?php $position     = $helper->getConfigModule('cookie_restriction/position'); ?>
+<?php $marginLeft   = $helper->getConfigModule('cookie_restriction/margin_left'); ?>
+<?php $marginRight  = $helper->getConfigModule('cookie_restriction/margin_right'); ?>
+<?php $marginBottom = $helper->getConfigModule('cookie_restriction/margin_bottom'); ?>
+<?php $fontSize     = $helper->getConfigModule('cookie_restriction/font_size'); ?>
+<?php $textAlign    = $helper->getConfigModule('cookie_restriction/text_align'); ?>
+<?php $identifier   = $helper->getConfigModule('cookie_restriction/identifier'); ?>
+<?php $hiddenBottom = $helper->getConfigModule('cookie_restriction/hidden_bottom'); ?>
+<?php $buttonClass  = $helper->getConfigModule('cookie_restriction/button_class'); ?>
 <div role="alertdialog"
      tabindex="-1"
      data-hidden-bottom="<?php echo $hiddenBottom ?>"
@@ -54,7 +54,7 @@
 			<?php endif ?>
         </div>
         <div class="actions">
-            <button id="btn-cookie-allow" class="btn-cookie allow primary <?php if(isset($configPopup['button_class'])) echo $configPopup['button_class']; ?>">
+            <button id="btn-cookie-allow" class="btn-cookie allow primary <?php echo $buttonClass ? $buttonClass : ''; ?>">
                 <span><?php echo $buttonText ?></span>
             </button>
         </div>
