@@ -1,8 +1,8 @@
 /*
 * @Author: nguyen
 * @Date:   2021-05-10 15:06:02
-* @Last Modified by:   Alex Dong
-* @Last Modified time: 2021-05-10 15:17:54
+* @Last Modified by:   nguyen
+* @Last Modified time: 2022-07-10 11:39:40
 */
 define([
     'jquery',
@@ -14,7 +14,7 @@ define([
 	var gdprPopupContainer = $('#magepow-gdpr-popup-container');
 	var popupContent = gdprPopupContainer.html();
 	var _gdprModal = gdprPopupContainer.find('#magepow-gdpr-popup');
-	$("#privacyLink").click(function(event) {
+	$("#privacyLink").on('click', function(event) {
 	  	event.preventDefault();
 	  	if(_gdprModal.length) {
 	  		var url = _gdprModal.data('url');
@@ -49,7 +49,7 @@ define([
 	if ($.cookie('user_allowed_save_cookie') === null || $.cookie('user_allowed_save_cookie') === "" || $.cookie('user_allowed_save_cookie') === "null" || $.cookie('user_allowed_save_cookie') === undefined){
 		$('body').addClass('cookie-message')
 	}
-	$('#btn-cookie-allow').click(function(){
+	$('#btn-cookie-allow').on('click', function(){
 		$('body').removeClass('cookie-message')
 	})
     $('.cookie-close').on('click', function(event) {

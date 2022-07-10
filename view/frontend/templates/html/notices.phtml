@@ -62,7 +62,7 @@
 </div>
 <script type="text/javascript">
 require(['jquery'], function($){
-    $(window).scroll(function() {
+    $(window).on('scroll', function() {
         var $body = $('body');
         var $noticeCookie = $('#notice-cookie-block');
         var y = $(this).scrollTop();
