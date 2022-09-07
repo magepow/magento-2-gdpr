@@ -6,7 +6,7 @@
 */
 define([
     'jquery',
-    'jquery/jquery.cookie',
+    'mage/cookies',
     'Magento_Ui/js/modal/modal'
     ], function($, cookie, modal){
     "use strict";
