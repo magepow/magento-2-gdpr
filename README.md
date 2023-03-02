@@ -1,3 +1,5 @@
+[<img src="https://github.com/magepow/themeforest/blob/master/shopify/shopify_affiliate.jpg" >](https://shopify.pxf.io/VyL446)
+
 ## Magento 2 GDPR extension FREE by Magepow
 When doing business in an online store, especially for companies reaching out to European Union customers, it is extremely important to ensure compliance with the GDPR - General Data Protection Regulation. The fines for companies that do not comply with GDPR now maximum up to 20 million EUR or 4% of global revenue annually.
 Supporting Magento websites to ensure compliance with GDPR regulations, Magepow develops Magento 2 GDPR extension Free that applies to all online stores. With outstanding features, the extension will help your website get consent from customers when accessing the site and avoid penalties.
