@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
     <system>
-        <tab id="magepow" translate="label" sortOrder="86">
+        <tab id="magepow" translate="label" sortOrder="102">
             <label>Magepow</label>
         </tab>
         <section id="magepow_gdpr" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="60">
