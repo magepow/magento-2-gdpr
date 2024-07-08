@@ -15,39 +15,32 @@ class Index extends \Magento\Framework\App\Action\Action
 {
     
     /**
-     * Index constructor.
      *
      * @param \Magepow\Gdpr\Helper\Data $helper
      */
-	
-	protected $_helper;    
-    /**
-     * Index constructor.
-     *
-     * @param \Magento\Framework\App\Action\Context $context
-     */
+    
+    protected $_helper;
+
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magepow\Gdpr\Helper\Data $helper
     ) {
         parent::__construct($context);
-        $this->_resultPageFactory = $resultPageFactory;
-        $this->_helper 			  = $helper;
+        $this->_helper            = $helper;
     }
 
     public function execute()
     {
-    	if ($this->getRequest()->isAjax()) {
-	        $this->_view->loadLayout();
-	        $identifier = $this->_helper->getConfigModule('cookie_restriction/identifier');
-		 	$response   = $this->_helper->getPageContent($identifier);
-		 	if(!$response) $response = __('Page %1 not found or empty', $identifier);
-		    $this->getResponse()->setBody($response);
-	    }else {
-	        $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
-	        $resultRedirect->setUrl($this->_redirect->getRefererUrl());
-	        return $resultRedirect;
-	    }
+        if ($this->getRequest()->isAjax()) {
+            $this->_view->loadLayout();
+            $identifier = $this->_helper->getConfigModule('cookie_restriction/identifier');
+            $response   = $this->_helper->getPageContent($identifier);
+            if(!$response) $response = __('Page %1 not found or empty', $identifier);
+            $this->getResponse()->setBody($response);
+        }else {
+            $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
+            $resultRedirect->setUrl($this->_redirect->getRefererUrl());
+            return $resultRedirect;
+        }
     }
 }
