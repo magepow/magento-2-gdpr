@@ -11,7 +11,7 @@
 				<identifier><![CDATA[privacy-policy-cookie-restriction-mode]]></identifier>
 				<button_text><![CDATA[Allow Cookies]]></button_text>
 				<more_view><![CDATA[popup]]></more_view>
-				<more_text><![CDATA[Read more]]></more_text>
+				<more_text><![CDATA[Read policy]]></more_text>
 				<width><![CDATA[full-width]]></width>
 				<width_custom>400</width_custom>
 				<position><![CDATA[left]]></position>
