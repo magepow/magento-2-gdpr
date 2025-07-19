@@ -1,5 +1,6 @@
 & when (@media-common =true) {
-	.cookie-hidden-bottom #notice-cookie-block {
+	.cookie-hidden-bottom #notice-cookie-block,
+	.scroll_down_end #notice-cookie-block {
         display: none;
     }
 	.message.global.cookie.magepow-gdpr-cookie-notice{
@@ -8,8 +9,7 @@
 	    position: fixed;
 	    right: 0;
 	    z-index: 3;
-		line-height:2; 
-		padding:30px;
+		line-height:2;
 		margin: 0;
 		display: block;
 		z-index:10;
@@ -28,5 +28,8 @@
 	}
 	.magepow-gdpr-cookie-notice.text-align-right{
 		text-align:right;
+	}
+	.magepow-gdpr-cookie-notice .info, .magepow-gdpr-cookie-notice .actions {
+		display: inline-block;
 	}
 }
